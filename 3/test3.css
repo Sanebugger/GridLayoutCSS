@@ -1,0 +1,50 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: bisque;
+}
+main{
+    width: 90vw;
+    margin: auto;
+    background-color:aliceblue;
+    border: 2px solid red;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);   /* or  grid-template-columns: 1fr 1fr 1fr 1fr;   */
+    grid-template-rows: 8vh 30vh 30vh 5vh ;
+    grid-gap: 2vh;   /*this ll add gaps to all rows and colums ,excluding very first row and very first column */
+}
+.header{
+    background-color: rgb(92, 52, 0);
+           /* it is in correct row ,so no need to make change in its row */
+           grid-column: 1/-1;    /* or  grid-column: 1/span 4  */
+}
+.sidebar{
+    background-color: rgb(126, 121, 114);
+           /* it is in correct column ,so no need to make change in its column*/
+
+           grid-row: 2/4;    /* or  grid-row: 2/span 2  */
+}
+.box1{background-color: rgb(221, 162, 84);}
+.box2{background-color: rgb(221, 162, 84);}
+.box3{background-color: rgb(221, 162, 84);}
+.main-content{background-color: rgb(185, 185, 185);
+       /* it is in correct row ,so no need to make change in its row */
+                    grid-column: 2/-1; /*  grid-column: 2/span 3;  */
+}
+.footer{background-color: rgb(100, 62, 12);
+           grid-column: 1/-1;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+@media (max-width :1000px) {
+    
+    main{
+        /* width: 90vw; */
+        /* margin: auto; */
+        /* background-color:aliceblue; */
+        /* border: 2px solid red; */
+        /* display: grid; */
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));   /* or  grid-template-columns: 1fr 1fr 1fr 1fr;   */
+        /* grid-template-rows: 8vh 30vh 30vh 5vh ; */
+        grid-gap: 2vh;  /*this ll add gaps to all rows and colums ,excluding very first row and very first column */
+    }
+}
